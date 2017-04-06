@@ -5,7 +5,7 @@ android {
     buildToolsVersion "24.0.3"
     defaultConfig {
         applicationId "com.ming.myanswer"
-        minSdkVersion 14
+        minSdkVersion 15
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
@@ -17,13 +17,34 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    productFlavors {
+    }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:24.2.1'
     testCompile 'junit:junit:4.12'
+    String htextview_version = "0.1.1"
+    compile "com.hanks:htextview-base:$htextview_version"
+    // base library
+    compile "com.hanks:htextview-fade:$htextview_version"
+    // optional
+    compile "com.hanks:htextview-line:$htextview_version"
+    // optional
+    compile "com.hanks:htextview-rainbow:$htextview_version"
+    // optional
+    compile "com.hanks:htextview-fade:$htextview_version"
+    // optional
+    compile "com.hanks:htextview-typer:$htextview_version"
+    // optional
+    compile "com.hanks:htextview-scale:$htextview_version"
+    // optional
+    compile "com.hanks:htextview-evaporate:$htextview_version"
+    // optional
+    compile "com.hanks:htextview-fall:$htextview_version"
+    // optional
 }
