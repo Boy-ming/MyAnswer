@@ -7,6 +7,8 @@ import android.view.View;
 import com.hanks.htextview.base.HTextView;
 
 import java.io.SyncFailedException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 
@@ -18,14 +20,41 @@ public class BaseActivity extends AppCompatActivity {
 
     int index;
 
+    public static List<String> splitWords(String str, int length){
+        List<String> result = new ArrayList<>();
+        String[] words = str.split(" ");
+        String tmp = "";
+        int i = 0;
+        while (i < words.length){
+            if(length >= (tmp+" "+words[i]).length()){
+                    tmp = tmp + " " + words[i];
+                i++;
+            }else{
+                result.add(tmp);
+                tmp = "";
+                //i--;
+            }
+            if( i  == words.length){
+                result.add(tmp);
+            }
+        }
+        for(String s : result){
+            System.out.println(":"+s);
+        }
+        return result;
+    }
+
     class ClickListener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
             if (v instanceof HTextView) {
                 Random random = new Random();
                 int index = random.nextInt(sentences.length);
-                System.out.println("Index -- "+ index);
-                ((HTextView) v).animateText(sentences[index]);
+                String str = sentences[index];
+                System.out.println("--------"+str);
+                splitWords(str,15);
+
+                ((HTextView) v).animateText(str);
 
             }
         }
@@ -75,7 +104,7 @@ public class BaseActivity extends AppCompatActivity {
 
 
 
-    String[] sentences = {
+    public static   String[] sentences = {
             "DON'T BET ON IT",
             "THE ANSWER MAY COME TO YOU IN ANOTHER LANGUAGE",
             "INVESTIGATE AND THEN ENJOY IT",

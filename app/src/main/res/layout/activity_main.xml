@@ -1,21 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/liner"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="16dp"
     android:weightSum="1">
-    <com.hanks.htextview.line.LineTextView
+    <com.hanks.htextview.fall.FallTextView
         android:id="@+id/textview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="8dp"
         android:gravity="center"
         android:padding="8dp"
-        android:text="This is LineTextView\nToday is Monday"
+        android:maxLines="10"
+        android:textSize="36sp"/>
+    <com.hanks.htextview.fall.FallTextView
+    android:id="@+id/textview2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="8dp"
+    android:gravity="center"
+    android:padding="8dp"
+    android:maxLines="10"
+    android:textSize="36sp"/>
+    <com.hanks.htextview.fall.FallTextView
+        android:id="@+id/textview3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="I NEED A ANSWER"
+        android:maxLines="10"
+        android:textSize="36sp"/>
+    <com.hanks.htextview.fall.FallTextView
+        android:id="@+id/textview4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:padding="8dp"
+        android:maxLines="10"
+        android:textSize="36sp"/>
+    <com.hanks.htextview.fall.FallTextView
+        android:id="@+id/textview5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:padding="8dp"
         android:maxLines="10"
         android:textSize="36sp"/>
 </LinearLayout>
